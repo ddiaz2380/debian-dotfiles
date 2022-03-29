@@ -1,0 +1,120 @@
+! ------------------------------------------------------------------------------
+! Fonts
+! ------------------------------------------------------------------------------
+
+!URxvt*font: xft:FiraCode:medium:size=12:antialiasing=true
+!URxvt*boldFont: xft:Hermit:bold:size=13:antialiasing=true:style=medium
+!URxvt*boldFont: xft:FiraCode:bold:size=12:antialiasing=true:style=medium
+!URxvt.letterSpace: 0
+
+! Font to Fira Code Retina, 16px
+!URxvt.font: xft:Fira Code Retina:style=Retina:pixelsize=14
+URxvt.font: xft:Terminus:style=Retina:pixelsize=15
+
+! Set Bold Font to Fira Code Bold, 16px
+!URxvt.boldFont: xft:Fira Code:style=Bold:pixelsize:14
+URxvt.boldFont: xft:Terminus:style=Bold:pixelsize:15
+
+! Set Italics Font to Fira Code Light, 16px
+!URxvt.italicFont: xft:Fira Code:style=Light:pixelsize:14
+URxvt.italicFont: xft:Terminus:style=Light:pixelsize:15
+
+
+
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
+Xft.dpi:90
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+
+!! Apariencia de la ventana
+!! Especificamos el titulo de la ventana, por default, urxvt
+URxvt.title:Consola
+
+! font spacing
+URxvt*letterSpace: 0
+URxvt.lineSpace: 1
+
+! general settings
+URxvt*saveline: 50000
+URxvt*termName: xterm-256color
+!URxvt*termName: rxvt-256color
+URxvt*iso14755: false
+URxvt*urgentOnBell: true
+
+! appearance
+URxvt*depth: 32
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt.internalBorder: 24
+URxvt*externalBorder: 0
+URxvt.cursorUnderline: false
+URxvt.fading: 15
+
+URxvt.geometry: 92x24
+
+! perl extensions
+URxvt.perl-ext-common: default,matcher,resize-font,fullscreen,clipboard,url-select,keyboard-select,config-reload
+
+!! fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
+
+!! tabbed
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
+
+!! resize-font
+!urxvt.font: 7x14
+URxvt.resize-font.step: 2
+URxvt.keysym.C-minus: resize-font:smaller
+URxvt.keysym.C-plus: resize-font:bigger
+URxvt.keysym.C-equal: resize-font:reset
+URxvt.keysym.C-question: resize-font:show
+
+!! Añadimos parpadeo al cursor
+URxvt.cursorBlink:true
+
+!! matcher
+URxvt.matcher.button: 1
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.matcher.rend.0: Uline Bold fg5
+
+
+! Restore Ctrl+Shift+(c|v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+! macros for clipboard and selection
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1     
+
+! scroll one line
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+
+! control arrow
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
+

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+## Environtment
+export PATH="${PATH}:/sbin"
+export PATH="${PATH}:$HOME/.local/bin"
+export PATH="${PATH}:$HOME/.config/bspwm"
+export RANGER_LOAD_DEFAULT_RC=FALSE
+export BROWSER=firefox
+export READER=zathura
+export EDITOR=nvim
+export TERM=xterm-256color
+export SHELL=/usr/bin/fish
+
+## Common Autostart
+#wal -i "$(< "$HOME/.cache/wal/wal")"
+xsetroot -cursor_name left_ptr
+xset b off
+xset r rate 250 25
+xbacklight -set 5
+xrdb -merge ~/.Xresources
+#hsetroot -fill ~/Pictures/Cartography.png
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+devmon &
+xsettingsd &
+dunst &
+
+## Touchpad Settings
+#synclient \
+#VertEdgeScroll=0 HorizEdgeScroll=0 \
+#VertTwoFingerScroll=1 HorizTwoFingerScroll=1 \
+#VertScrollDelta=40 HorizScrollDelta=40 \
+#MinSpeed=0.2 MaxSpeed=1.4 \
+#AccelFactor=0.2 CoastingSpeed=10 \
+#TapButton1=1 TapButton2=0 TapButton3=0

@@ -1,0 +1,23 @@
+sudo apt install build-essential liblocal-lib-perl libx11-dev libncurses5-dev libwww-perl libdata-dump-perl libxext-dev libmodule-build-perl libjson-perl libmodule-build-perl
+sudo apt install python3-pip python3-setuptools
+sudo apt install python3-dev
+pip3 install ueberzug
+
+siji font:
+https://github.com/stark/siji
+rm /etc/fonts/conf.d/70-no-bitmaps.conf
+
+install LAMP:
+https://itnixpro.com/install-lamp-stack-on-debian-11/
+
+
+install pipe-viewer:
+https://hund.tty1.se/2021/11/14/how-to-install-pipe-viewer-in-debian.html
+
+
+install vmwarepro:
+https://computingforgeeks.com/install-vmware-workstation-on-debian/
+
+
+instalar spotify:
+https://github.com/Project-Junk/spotify-adblock-linux
